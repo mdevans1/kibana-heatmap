@@ -99,8 +99,22 @@
         });
 
         for(var i= 1; i <= opts.tile.count.x; i++) {
-          var value = i + "h";
-
+          if (i <12) {
+                  var value = i + " am";
+          }
+          else {
+                  if (i == 12) {
+                          var value = 12 + " pm"
+                  }
+                  else {
+                          if (i == 24) {
+                                  var value = 12 + " am"
+                          }
+                          else {
+                                  var value = (i-12) + " pm";
+                          }
+                  }
+          }
           var x = opts.legend.leftOffset  + tileSize * i - (tileSize / 2);
           var y = tileSize * 0.75;
 

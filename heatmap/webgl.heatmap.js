@@ -136,7 +136,22 @@ define([
 
     
     for(var i= 1; i <= 24; i++) {
-      var value = i + " h";
+      if (i <12) {
+              var value = i + " am";
+      }
+      else {
+              if (i == 12) {
+                      var value = 12 + " pm"
+              }
+              else {
+                      if (i == 24) {
+                              var value = 12 + " am"
+                      }
+                      else {
+                              var value = (i-12) + " pm";
+                      }
+              }
+      }
       scene.add(createLabelText(value, 7, (-13.2 * BOX_SIZE) + i * BOX_SIZE, 20, (PADDING * BOX_SIZE) + 10));
     }
   }
